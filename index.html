@@ -30,7 +30,7 @@ object-fit:cover;
 z-index:-2;
 }
 
-/* OVERLAY SOFT */
+/* OVERLAY */
 .overlay{
 min-height:100vh;
 background:rgba(200,200,210,0.35);
@@ -45,10 +45,9 @@ padding:50px 20px;
 header h1{
 font-size:46px;
 margin-bottom:35px;
-letter-spacing:1px;
 }
 
-/* PROFILE CARD */
+/* PROFILE */
 .profile-card{
 background:rgba(255,255,255,0.18);
 backdrop-filter:blur(14px);
@@ -77,11 +76,10 @@ margin-bottom:14px;
 
 .profile-info p{
 font-size:20px;
-opacity:0.95;
 margin-bottom:6px;
 }
 
-/* GRID 2/3 PAGE */
+/* GRID */
 .main-box{
 width:66%;
 max-width:1000px;
@@ -111,35 +109,36 @@ grid-template-columns:1fr 1fr;
 gap:14px;
 }
 
-/* ẢNH DỌC ĐIỆN THOẠI AUTO ĐẸP */
 .hobby-img img{
 width:100%;
 aspect-ratio:3/4;
 object-fit:cover;
 border-radius:16px;
-box-shadow:0 6px 20px rgba(0,0,0,0.25);
 }
 
-/* SPOTIFY CARD */
-.spotify-box iframe{
+/* SPOTIFY FULL WIDTH */
+.spotify-wide{
+grid-column:1 / span 2;
+}
+
+.spotify-wide iframe{
 width:100%;
-height:260px;
+height:220px;
 border-radius:16px;
 border:none;
-margin-bottom:14px;
+margin-bottom:12px;
 }
 
 footer{
 margin-top:50px;
 opacity:0.85;
-font-size:15px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- VIDEO NỀN (LUÔN MUTE) -->
+<!-- VIDEO NỀN -->
 <video class="bg-video" autoplay muted loop playsinline>
 <source src="bg.mp4" type="video/mp4">
 </video>
@@ -161,12 +160,12 @@ font-size:15px;
 <div class="profile-info">
 <h2>Nguyễn Thị Khánh Ly</h2>
 <p>Ngày sinh: 28/06/2008</p>
-<p>Sở thích: Game, Đọc sách, Nghe nhạc, Ngủ</p>
+<p>Sở thích: Game, Đọc sách, Nghe nhạc</p>
 <p>Màu yêu thích: Xám nhạt</p>
 </div>
 </div>
 
-<!-- MAIN GRID -->
+<!-- GRID -->
 <div class="main-box">
 
 <div class="card">
@@ -185,24 +184,16 @@ font-size:15px;
 </div>
 </div>
 
-<!-- SPOTIFY -->
-<div class="card spotify-box">
+<!-- SPOTIFY FULL -->
+<div class="card spotify-wide">
 <h3>Nhạc yêu thích</h3>
 
-<!-- Bạn paste embed spotify vào đây -->
+<!-- Bạn paste Spotify embed vào đây -->
 <iframe src="https://open.spotify.com/embed/track/1L4d2lafz1odpIMe8va21X"></iframe>
 <iframe src="https://open.spotify.com/embed/track/5pesNiBKAx8JNwK2mQ2HEc"></iframe>
 <iframe src="https://open.spotify.com/embed/track/5U30iZBlmxkpHqzb1OSnBS"></iframe>
 <iframe src="https://open.spotify.com/embed/track/5QT1bR5yCbwzTd2LNa8m0d"></iframe>
 
-</div>
-
-<div class="card">
-<h3>Ngủ</h3>
-<div class="hobby-img">
-<img src="images/sleep1.jpg">
-<img src="images/sleep2.jpg">
-</div>
 </div>
 
 </div>
@@ -216,7 +207,6 @@ font-size:15px;
 <script>
 const music = document.getElementById("bgMusic");
 
-/* Browser chỉ cho autoplay audio sau interaction */
 document.addEventListener("click",()=>{
 music.play();
 },{once:true});
