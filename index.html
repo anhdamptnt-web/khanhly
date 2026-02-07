@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+body,html{
+height:100%;
+color:white;
+overflow-x:hidden;
+}
+
+/* VIDEO NỀN */
+.bg-video{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
+}
+
+/* OVERLAY SOFT */
+.overlay{
+min-height:100vh;
+background:rgba(200,200,210,0.35);
+backdrop-filter:blur(6px);
+display:flex;
+flex-direction:column;
+align-items:center;
+padding:40px 20px;
+}
+
+/* HEADER */
+header h1{
+font-size:42px;
+margin-bottom:30px;
+}
+
+/* PROFILE CARD */
+.profile-card{
+background:rgba(255,255,255,0.18);
+backdrop-filter:blur(12px);
+border-radius:24px;
+padding:30px;
+display:flex;
+gap:25px;
+max-width:700px;
+width:100%;
+margin-bottom:40px;
+}
+
+.profile-card img{
+width:170px;
+height:170px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid rgba(255,255,255,0.7);
+}
+
+/* TEXT TO HƠN CHO HÀI HÒA */
+.profile-info h2{
+font-size:32px;
+margin-bottom:12px;
+}
+
+.profile-info p{
+font-size:19px;
+opacity:0.95;
+}
+
+/* GRID 2/3 PAGE */
+.main-box{
+width:66%;
+max-width:950px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:22px;
+}
+
+/* CARD */
+.card{
+background:rgba(255,255,255,0.18);
+backdrop-filter:blur(12px);
+border-radius:22px;
+padding:22px;
+}
+
+.card h3{
+font-size:24px;
+margin-bottom:12px;
+}
+
+/* IMG GRID */
+.hobby-img{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+.hobby-img img{
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:14px;
+}
+
+footer{
+margin-top:40px;
+opacity:0.8;
+}
+</style>
+</head>
+
+<body>
+
+ <!-- VIDEO NỀN -->
+    <video id="bgVideo" class="bg-video" autoplay muted loop playsinline>
+    <source src="bg.mp4" type="video/mp4">
+</video>
+
+<!-- NHẠC NỀN -->
+    <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="overlay">
+
+<header>
+<h1>Trang cá nhân</h1>
+</header>
+
+<!-- PROFILE -->
+<div class="profile-card">
+<img src="images/avatar.jpg">
+<div class="profile-info">
+<h2>Nguyễn Thị Khánh Ly</h2>
+<p>Ngày sinh: 28/06/2008</p>
+<p>Sở thích: Game, Đọc sách, Nghe nhạc, Ngủ</p>
+<p>Màu yêu thích: Xám nhạt</p>
+</div>
+</div>
+
+<!-- MAIN GRID -->
+<div class="main-box">
+
+<div class="card">
+<h3>Chơi game</h3>
+<div class="hobby-img">
+<img src="images/game1.jpg">
+<img src="images/game2.jpg">
+</div>
+</div>
+
+<div class="card">
+<h3>Đọc sách</h3>
+<div class="hobby-img">
+<img src="images/book1.jpg">
+<img src="images/book2.jpg">
+</div>
+</div>
+
+<div class="card">
+<h3>Nghe nhạc</h3>
+<div class="hobby-img">
+<img src="images/music1.jpg">
+<img src="images/music2.jpg">
+</div>
+</div>
+
+<div class="card">
+<h3>Relax</h3>
+<div class="hobby-img">
+<img src="images/sleep1.jpg">
+<img src="images/sleep2.jpg">
+</div>
+</div>
+
+</div>
+
+<footer>
+© 2026 Personal Website
+</footer>
+
+</div>
+
+<script>
+const video = document.getElementById("bgVideo");
+const music = document.getElementById("bgMusic");
+
+document.addEventListener("click",()=>{
+    video.muted = false;
+    video.play();
+    music.play();
+},{once:true});
+</script>
+
+</body>
+</html>
